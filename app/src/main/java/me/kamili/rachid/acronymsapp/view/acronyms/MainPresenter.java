@@ -77,7 +77,7 @@ public class MainPresenter extends BasePresenter<MainView> implements Observer<L
         getView().onHideDialog();
         Log.d(TAG, "onError: " + e.getMessage());
         getView().onClearSearch();
-        getView().onShowSnackbar("Error loading " + e.getMessage());
+        getView().onShowSnackbar("No data available");
     }
 
     @Override
