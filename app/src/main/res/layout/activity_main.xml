@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.acronyms.MainActivity">
+
+    <Button
+        android:id="@+id/search_btn"
+        android:layout_width="@dimen/search_btn_dim"
+        android:layout_height="@dimen/search_btn_dim"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="15dp"
+        android:background="@drawable/ic_search" />
+
+    <EditText
+        android:id="@+id/et_search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_margin="@dimen/def_margin"
+        android:hint="@string/edittext_hint"
+        android:inputType="text"
+        android:maxLines="1" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rvAcronymList"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/search_btn"
+        android:padding="@dimen/def_margin"
+        android:scrollbars="vertical" />
+
+</RelativeLayout>
