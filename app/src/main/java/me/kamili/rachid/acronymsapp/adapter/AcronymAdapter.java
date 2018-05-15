@@ -15,6 +15,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import me.kamili.rachid.acronymsapp.R;
 import me.kamili.rachid.acronymsapp.module.LongForm;
+import me.kamili.rachid.acronymsapp.utils.TextUtils;
 
 public class AcronymAdapter extends RecyclerView.Adapter<AcronymAdapter.Holder> {
 
@@ -67,19 +68,25 @@ public class AcronymAdapter extends RecyclerView.Adapter<AcronymAdapter.Holder> 
 
         @BindView(R.id.acronym_text)
         TextView tvAcronym;
-        private Context mContext;
+        @BindView(R.id.year_text)
+        TextView tvYear;
+
         private LongForm mLongForm;
 
         public Holder(View itemView) {
             super(itemView);
             itemView.setOnClickListener(this);
-            mContext = itemView.getContext();
             ButterKnife.bind(this, itemView);
         }
 
         public void bind(LongForm longForm) {
             mLongForm = longForm;
-            tvAcronym.setText(mLongForm.getLongform());
+
+            //capitalise all words
+            tvAcronym.setText(TextUtils.capitalizeByWords(mLongForm.getLongform()));
+
+            //year
+            tvYear.setText(String.valueOf(mLongForm.getSince()));
         }
 
         @Override

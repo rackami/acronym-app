@@ -11,10 +11,6 @@ import retrofit2.http.Query;
 public interface ApiService {
 
     //Getting Acronyms
-    @Headers({
-            "Accept: application/json",
-            "Content-Type: application/json"
-    })
     @GET("/software/acromine/dictionary.py")
     Observable<List<AcromineResponse>> getAcronyms(@Query("sf") String query);
 
