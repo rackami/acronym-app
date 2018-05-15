@@ -7,6 +7,6 @@ import me.kamili.rachid.acronymsapp.view.base.BaseView;
 
 public interface MainView extends BaseView {
     void onClear();
-
+    void onClearSearch();
     void onAcronymsLoaded(List<LongForm> acronyms);
 }

@@ -76,6 +76,7 @@ public class MainPresenter extends BasePresenter<MainView> implements Observer<L
     public void onError(Throwable e) {
         getView().onHideDialog();
         Log.d(TAG, "onError: " + e.getMessage());
+        getView().onClearSearch();
         getView().onShowSnackbar("Error loading " + e.getMessage());
     }
 

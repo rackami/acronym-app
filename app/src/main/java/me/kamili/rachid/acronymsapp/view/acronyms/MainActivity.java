@@ -85,6 +85,11 @@ public class MainActivity extends BaseActivity implements MainView, AcronymAdapt
     }
 
     @Override
+    public void onClearSearch() {
+        mSearchEditText.setText("");
+    }
+
+    @Override
     public void onLongFormClick(LongForm lf, int position) {
         onShowSnackbar(lf.getLongform() + " is clicked");
     }
